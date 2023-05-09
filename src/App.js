@@ -9,6 +9,7 @@ import AboutUs from './Components/AboutUs';
 import Contacts from './Components/Contacts';
 import NotFound from './Components/NotFound';
 import Account from './Components/Account';
+import FullItem from './Components/FullItem';
 
 export default function App() {
   const [onCart, setOnCart] = useState([]);
@@ -43,6 +44,7 @@ export default function App() {
             <Route path='about' element={<AboutUs />} />
             <Route path='contacts' element={<Contacts />} />
             <Route path='account' element={<Account />} />
+            <Route path='fullItem' element={<FullItem />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

@@ -1,7 +1,7 @@
 import { FaTools } from 'react-icons/fa';
 import { BsCart4 } from 'react-icons/bs';
 import styles from './header.module.css';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header({ cartOpen, onCart }) {
   return (
@@ -38,8 +38,8 @@ function Header({ cartOpen, onCart }) {
         </div>
       </div>
       <div className={styles.headerImg}>
-        <div className={styles.siteName}>
-          <h1>Tool Store</h1>
+        <div>
+          <Link to="/" className={styles.siteName}><h1>Tool Store</h1></Link>
         </div>
       </div>
     </div>

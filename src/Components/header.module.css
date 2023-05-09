@@ -55,6 +55,11 @@
   font-size: 0.6em;
 }
 
+.siteName {
+  color: white;
+  text-decoration: none;
+}
+
 .headerImg {
   min-height: 300px;
   display: flex;
