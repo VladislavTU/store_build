@@ -1,0 +1,19 @@
+.footer {
+  border-top: 1px solid black;
+}
+
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footerStoreName {
+  font-weight: bold;
+  font-size: 24px;
+}
