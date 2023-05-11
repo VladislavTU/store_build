@@ -2,10 +2,16 @@ import { Outlet } from 'react-router-dom';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 
-const MainLayout = ({ cartOpen, onCart }) => {
+const MainLayout = ({ cartOpen, onCart, items, deleteFromCart, cartState }) => {
   return (
     <>
-      <Header cartOpen={cartOpen} onCart={onCart} />
+      <Header
+        cartOpen={cartOpen}
+        onCart={onCart}
+        items={items}
+        deleteFromCart={deleteFromCart}
+        cartState={cartState}
+      />
       <Outlet />
       <Footer />
     </>

@@ -1,5 +1,16 @@
-.headerTop {
+.header {
   position: relative;
+}
+
+.headerUpper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: lightgray;
+}
+
+.headerTop {
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -61,6 +72,7 @@
 }
 
 .headerImg {
+  margin-top: 60px;
   min-height: 300px;
   display: flex;
   justify-content: center;

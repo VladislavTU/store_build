@@ -5,7 +5,12 @@ function Item({ items, addOnCart }) {
   return items.map((el) => (
     <div className={styles.item} key={el.id}>
       <h4>{el.name}</h4>
-      <Link to='fullItem'><img src={el.url} alt="Item" /></Link>
+      <div className={styles.itemImgContainer}>
+        <Link to={el.name}>
+          {' '}
+          <img src={el.url} alt="Item" />{' '}
+        </Link>
+      </div>
       <p>{el.description}</p>
       <div className={styles.cartAndPrice}>
         <p className={styles.itemPrice}>{el.price}$</p>

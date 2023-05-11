@@ -20,9 +20,9 @@ export default function App() {
     setOnCart([...onCart, item]);
   };
   console.log(onCart);
-  const [cartOpen, setCartOpen] = useState(false);
+  const [cartOpenState, setCartOpenState] = useState(false);
   const cartOpenHandler = () => {
-    setCartOpen(!cartOpen);
+    setCartOpenState(!cartOpenState);
   };
   const deleteFromCartHandler = (index) => {
     setOnCart(onCart.filter((el) => el.id !== index));
@@ -33,7 +33,15 @@ export default function App() {
         <Routes>
           <Route
             path="/"
-            element={<MainLayout cartOpen={cartOpenHandler} onCart={onCart} />}
+            element={
+              <MainLayout
+                cartOpen={cartOpenHandler}
+                onCart={onCart}
+                items={itemsList}
+                deleteFromCart={deleteFromCartHandler}
+                cartState={cartOpenState}
+              />
+            }
           >
             <Route
               index
@@ -41,21 +49,14 @@ export default function App() {
                 <ItemsList items={itemsList} addOnCart={onCartHandler} />
               }
             />
-            <Route path='about' element={<AboutUs />} />
-            <Route path='contacts' element={<Contacts />} />
-            <Route path='account' element={<Account />} />
-            <Route path='fullItem' element={<FullItem />} />
+            <Route path="about" element={<AboutUs />} />
+            <Route path="contacts" element={<Contacts />} />
+            <Route path="account" element={<Account />} />
+            <Route path="fullItem" element={<FullItem />} />
+            <Route path="/:name" element={<FullItem items={itemsList} />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
-        {cartOpen && (
-          <Cart
-            cartOpen={cartOpenHandler}
-            items={itemsList}
-            onCartItems={onCart}
-            deleteFromCart={deleteFromCartHandler}
-          />
-        )}
       </div>
     </BrowserRouter>
   );

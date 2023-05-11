@@ -1,7 +1,7 @@
 import styles from './cart.module.css';
 import { IoMdCloseCircleOutline } from 'react-icons/io';
 
-function Cart({ cartOpen, onCartItems, deleteFromCart }) {
+function Cart({ cartOpen, items, onCartItems, deleteFromCart }) {
   return (
     <div className={styles.cart}>
       <IoMdCloseCircleOutline
