@@ -1,7 +1,6 @@
 import ItemsList from './Components/ItemsList';
 import itemsList from './items/items';
 import './styles.css';
-import Cart from './Components/Cart';
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
@@ -19,7 +18,6 @@ export default function App() {
     }
     setOnCart([...onCart, item]);
   };
-  console.log(onCart);
   const [cartOpenState, setCartOpenState] = useState(false);
   const cartOpenHandler = () => {
     setCartOpenState(!cartOpenState);

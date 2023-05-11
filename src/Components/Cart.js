@@ -10,7 +10,7 @@ function Cart({ cartOpen, items, onCartItems, deleteFromCart }) {
         onClick={() => cartOpen()}
       />
       {onCartItems.map((el) => (
-        <div className={styles.cartItem}>
+        <div className={styles.cartItem} key={el.id}>
           <img src={el.url} alt="Item" />
           <h4>{el.name}</h4>
           <p className={styles.itemPrice}>{el.price}$</p>
